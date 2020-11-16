@@ -2,13 +2,13 @@
 cls
 
 :: -help
-for /f "usebackq delims=" %%s in (`iwm_FileDialog.exe -h`) do echo.
+for /f "usebackq delims=" %%s in (`"iwm_FileDialog.exe -h"`) do echo.
 
 :: -nameonly
 :R0
 	set rtn=
 
-	for /f "usebackq delims=" %%s in (`iwm_FileDialog.exe -no`) do set rtn=%%s
+	for /f "usebackq delims=" %%s in (`"iwm_FileDialog.exe -no"`) do set rtn=%%s
 
 	if "%rtn%"=="" goto :R9
 
